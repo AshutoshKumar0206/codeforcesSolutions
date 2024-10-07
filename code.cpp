@@ -2,39 +2,45 @@
 using namespace std;
 #define ll long long
 void solve(){
-int n;
-cin>>n;
+int n,m,k;
+cin>>n>>m>>k;
 vector<int>v(n);
-int One = 0;
-for(int i=0; i<n; i++){
+for(int i=0;i<n;i++){
     cin>>v[i];
-One+=v[i];
-if(v[i] == 1){
-    v[i] = -1;
 }
-else{
-    v[i] = 1;
+    int inBag = m;
+for(int i=0;i<n-1;i++){
+    ll next = v[i+1];
+    ll curr = v[i];
+    ll diff = abs(next - curr);
+   if(diff<=k){
+     inBag += (curr - max(0ll, next-k));
+   }
+   else{
+    int need = abs(diff - k);
+    if(curr > next){
+    inBag += (curr - max(0ll, next-k)); 
+    }
+    else{
+       if(inBag >= need){
+        inBag -= need;
+       }
+       else{
+        cout<<"NO"<<endl;
+        return;
+       } 
+    }
+   }
 }
-}
-int cnt = 0;
-int ans = 0;
-for(int i=0; i<n; i++){
-    cnt = max(0, cnt+v[i]);
-    ans = max(cnt, ans);
-}
-if(One == n){
-    cout<<n-1<<endl;
-    return;
-}
-cout<<One+ans<<endl;
+cout<<"YES"<<endl;
 }
 int main(){ 
     ios::sync_with_stdio(0); 
     cin.tie(0);
-    // int t;
-    // cin>>t;
-    // while(t--){
+    int t;
+    cin>>t;
+    while(t--){
         solve();
-    // }
+    }
     return 0;
 }
