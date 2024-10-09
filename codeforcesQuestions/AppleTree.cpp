@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-void dfs(int v, int p, unordered_map<int,vector<int>>&adj, vector<int>&cnt){
+void dfs(ll v, ll p, unordered_map<ll,vector<ll>>&adj, vector<ll>&cnt){
     if(adj[v].size() == 1 && adj[v][0] == p){
         cnt[v] = 1;
     }
@@ -15,23 +15,23 @@ void dfs(int v, int p, unordered_map<int,vector<int>>&adj, vector<int>&cnt){
     }
 }
 void solve(){
-int n;
+ll n;
 cin>>n;
-unordered_map<int,vector<int>>adj;
+unordered_map<ll,vector<ll>>adj;
  for (int i = 0; i < n - 1; ++i) {
-        int u, v;
+        ll u, v;
         cin >> u >> v;
         adj[u].push_back(v);
         adj[v].push_back(u); 
     }
-    vector<int>cnt(n+1);
+    vector<ll>cnt(n+1);
     dfs(1, -1, adj, cnt);
-    int q;
+    ll q;
     cin>>q;
     while(q--){
-        int x, y;
+        ll x, y;
         cin>>x>>y;
-      cout<<cnt[x]*cnt[y]<<endl;
+      cout<<cnt[x]*1ll*cnt[y]<<endl;
     }
 }
 int main(){
