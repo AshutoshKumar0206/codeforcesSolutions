@@ -14,12 +14,12 @@ for(int i=0; i<n; i++){
     maxi = max(maxi,v[i]);
 }
 sort(v.begin(), v.end(), comparator);
-if(maxi<0){
-    cout<<v[n-1]*v[n-2]*v[n-3]*v[n-4]*v[n-5]<<endl;
+if(maxi == 0){
+    cout<<0<<endl;
     return;
 }
-else if(maxi == 0){
-    cout<<0<<endl;
+else if(maxi<0){
+    cout<<v[n-1]*v[n-2]*v[n-3]*v[n-4]*v[n-5]<<endl;
     return;
 }
 ll ans = v[0]*v[1]*v[2]*v[3]*v[4];
