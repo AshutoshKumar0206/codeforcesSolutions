@@ -8,6 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
+      "cwd": "c:/Users/ashut/Desktop/codeforces questions",
+      "program": "c:/Users/ashut/Desktop/codeforces questions/build/Debug/outDebug",
       "cwd": "c:/Users/ashut/Desktop/Codeforces/codeforcesQuestions",
       "program": "c:/Users/ashut/Desktop/Codeforces/codeforcesQuestions/build/Debug/outDebug",
       "MIMode": "gdb",
