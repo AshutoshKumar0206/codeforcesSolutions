@@ -13,7 +13,7 @@ map<ll,ll>m;
 m[0] = 0;
 dp[0] = 0;
 vector<ll>pr(n+1, 0);
-pr[0] = v[1];
+
 for(int i = 1; i<=n; i++){
 pr[i] = pr[i-1] + v[i];
 }
